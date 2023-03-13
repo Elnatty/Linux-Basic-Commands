@@ -64,7 +64,7 @@
 
 ```find . -type f | xargs file``` finding content in the current dir with ```.```, and using the ```xargs``` to get human readable content ```file``` (readable items from a file).
 
-```man find | grep "byte"``` easily use the mannual guide and grep to find keywords instead of going through the entire mannual. 
+```man find | grep "byte"``` easily use the mannual guide and grep to find keywords instead of going through the entire mannual.
 
 
 
@@ -88,4 +88,38 @@
 
 ```uname -a``` enumerating kernel info.
 
-```
+```du -sh *``` view current disk usage, ```du -sh * | grep "10M"``` searching for folders with specified sizes, or ```sudo du -sh * | grep "G"```
+
+```du -shc *``` view the total size of all folders in the current dir.
+
+```df -h``` view entire disk usage details.
+
+
+
+#
+## Strings manipulations using sort and uniq
+
+```sort data.txt``` sort data in accending order.
+
+```uniq -u``` works after data has been sorted. A good usecase for 'uniq' is ```sort data.txt | uniq -u``` sort data, then print out the unique value on the screen.
+
+
+#
+## Shells configurations
+```cat /etc/shells``` view all shells in ur linux dist.
+
+```cat /etc/passwd | grep dking``` displays the current shell for specified users.
+
+```chsh``` change shell to desired shell, then enter the particular shell path ie; ```/usr/bin/fish``` then logout and login.
+
+#
+## Archiving and Decompressing with tar.
+```tar -cf test.tar Test/``` compressing ```Test``` folder to a tar file ```test.tar```.
+
+```tar -xvf test.tar``` extracting/decompressing the tar file, ```-xvf``` means extract, file and verbose output.
+
+#
+## Archiving and Decompressing with tar.gz.
+```tar -czf test.tar.gz Test/``` compress using the tar.gz format.
+
+```tar -xzf test.tar.gz``` decompress using the tar.gz format.
