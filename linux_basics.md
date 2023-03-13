@@ -34,7 +34,7 @@
 ```chown root test.sh``` change the test.sh file ownership to root, ```chgrp root test.sh``` change the group ownership to root.
 
 #
-## search with grep, locate and find.
+## indepth search with grep, locate and find.
 ```grep "word" /etc/passwd``` search for cAsE-sEnTitIvE term "word", or ```grep -i "word" /etc/passwd``` for non cAsE-sEnTitIvE keywords.
 
 ```cat /etc/passwd | grep "dking"``` piping outputs into grep to find keywords. eg; ```ifconfig | grep "inet"``` displays results for keyword "inet"
@@ -55,6 +55,14 @@
 
 ```find /home/ -type f -perm 744``` use find to search for ```f``` file types with specific permissions.
 
+```find . -type f -size 1033c ! -executable``` the ```.``` means current dir, ```! -executable``` means not executable, ```-size 1033c``` means files with size of 1033 bytes.
+
+```find / -user bandit7 -group bandit6 -size 33c -type f``` search for results in entire file system with specified user, group, size and file type.
+
+```find $HOME -name "*.mp4" -group vivek -ls``` To list file in ls command format pass the -ls option to the find.
+
+
+```find . -type f | xargs file``` finding content in the current dir with ```.```, and using the ```xargs``` to get human readable content ```file``` (readable items from a file).
 
 
 
