@@ -1,3 +1,5 @@
 # linux Basics
 
-Listing all dir: ```ls```
+ctl + alt + t ->(open terminal).
+
+ctl + shift + w ->(close terminal)
