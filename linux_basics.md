@@ -20,6 +20,9 @@
 
 ```vim password.txt``` to use the vim editor, ```i``` to insert text, hit ```esc```, type ```:q!```, then hit ```enter``` to exit vim and discard changes.
 
+#
+## chmod and chgrp.
+
 ```chmod ugo=rwx test.sh``` set read, write and execute permission for the test.sh file or, ```chmod ugo-x``` to remove execute permission for all users.
 
 ```chmod 777 test.sh``` set rwx for all users, ```chmod 764``` set rwx for owner, rw for group, and read permision for others.
@@ -30,6 +33,8 @@
 
 ```chown root test.sh``` change the test.sh file ownership to root, ```chgrp root test.sh``` change the group ownership to root.
 
+#
+## grep and locate.
 ```grep "word" /etc/passwd``` search for cAsE-sEnTitIvE term "word", or ```grep -i "word" /etc/passwd``` for non cAsE-sEnTitIvE keywords.
 
 ```cat /etc/passwd | grep "dking"``` piping outputs into grep to find keywords. eg; ```ifconfig | grep "inet"``` displays results for keyword "inet"
@@ -43,5 +48,23 @@
 ```locate --all -c passwd``` viewing total number of search results using the '-c' argument or ```locate -i -c /etc/passwd``` to get count results for directories.
 
 #
+## Enumerating User and PC info.
+
+```whoami``` prints currently logged in user.
+
+```who``` prints all logged in users.
+
+```hostname``` prints workstation name.
+
+```sudo nano /etc/hostname``` to edit workstation name. 
+
+```id``` displays ids, group ids of currently logged in user (basic user enumeration).
+
+
+```lsb_release -a``` basic info about your installed debian linux distribution, or ```cat /etc/issue```
+
+```lscpu``` enumerating cpu information.
+
+```uname -a``` enumerating kernel info.
 
 ```
