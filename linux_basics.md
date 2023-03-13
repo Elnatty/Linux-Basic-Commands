@@ -34,7 +34,7 @@
 ```chown root test.sh``` change the test.sh file ownership to root, ```chgrp root test.sh``` change the group ownership to root.
 
 #
-## grep and locate.
+## search with grep, locate and find.
 ```grep "word" /etc/passwd``` search for cAsE-sEnTitIvE term "word", or ```grep -i "word" /etc/passwd``` for non cAsE-sEnTitIvE keywords.
 
 ```cat /etc/passwd | grep "dking"``` piping outputs into grep to find keywords. eg; ```ifconfig | grep "inet"``` displays results for keyword "inet"
@@ -46,6 +46,17 @@
 ```locate --all "*.conf" | grep resolv``` using locate to find all occurences of the '.conf' extensions, then piping the output to grep to find.
 
 ```locate --all -c passwd``` viewing total number of search results using the '-c' argument or ```locate -i -c /etc/passwd``` to get count results for directories.
+
+```sudo find / -type f -name "proxychains.conf"``` ```'/'``` denotes the root dir, ```-type f``` denotes type of file; either ```type d``` for directory or ```type f``` for file, ```-name``` is to specify file name.
+
+```sudo find / -type d -name "dking"``` to find the ```d``` directory name "dking". or ```sudo find / -type d -iname "dking"``` to denote for non case sensitive results.
+
+```find /etc -name "proxychains.conf" -size +1M``` finding stuffs by indicating filesize.
+
+```find /home/ -type f -perm 744``` use find to search for ```f``` file types with specific permissions.
+
+
+
 
 #
 ## Enumerating User and PC info.
