@@ -30,4 +30,18 @@
 
 ```chown root test.sh``` change the test.sh file ownership to root, ```chgrp root test.sh``` change the group ownership to root.
 
+```grep "word" /etc/passwd``` search for cAsE-sEnTitIvE term "word", or ```grep -i "word" /etc/passwd``` for non cAsE-sEnTitIvE keywords.
+
+```cat /etc/passwd | grep "dking"``` piping outputs into grep to find keywords. eg; ```ifconfig | grep "inet"``` displays results for keyword "inet"
+
+> __Note:__ ```>``` pipes output into a specified location without displaying content on the screen, while ```|``` also pipes output into a specified location while displaying content on the screen. eg; ```cat /etc/passwd > /home/dking/Desktop/test.txt``` and ```cat /etc/passwd | /home/dking/Desktop/test.txt```
+
+```locate "passwd" | grep "/etc/passwd"``` using locate and grep efficiently.
+
+```locate --all "*.conf" | grep resolv``` using locate to find all occurences of the '.conf' extensions, then piping the output to grep to find.
+
+```locate --all -c passwd``` viewing total number of search results using the '-c' argument or ```locate -i -c /etc/passwd``` to get count results for directories.
+
+#
+
 ```
