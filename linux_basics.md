@@ -64,6 +64,8 @@
 
 ```find . -type f | xargs file``` finding content in the current dir with ```.```, and using the ```xargs``` to get human readable content ```file``` (readable items from a file).
 
+```man find | grep "byte"``` easily use the mannual guide and grep to find keywords instead of going through the entire mannual. 
+
 
 
 #
