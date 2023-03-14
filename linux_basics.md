@@ -161,7 +161,6 @@ Under the ```# User privilege specification```, you can add a line defining perm
 nathan  ALL=(ALL) /usr/bin/apt-get
 ```
 
-
 ```pkexec visudo``` fix your corrupt visudo file.
 
 ```sudo groupadd marketing``` create a new group called marketing.
@@ -170,4 +169,25 @@ nathan  ALL=(ALL) /usr/bin/apt-get
 
 ```sudo usermod -aG marketers nathan``` adds a user into the new group.
 
-```
+
+#
+## Networking in Linux
+```ip addr``` view ip address of all interfaces.
+
+```ip route``` view routing table.
+
+```ip neigh``` view neighbours in the network.
+
+```dhclient``` info about dhcp.
+
+```netstat -t``` displays current tcp connections.
+
+```netstat -l``` displays all listening ports.
+
+```netstat -lt``` displays all listening tcp ports.
+
+```netstat -lu``` displays all listening udp ports.
+
+```netstat -p``` displays all running processes and their ids.
+
+```sudo netdiscover -i enp2s0``` an active/passive recon tool, for scanning the network (using arp)
