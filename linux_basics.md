@@ -47,6 +47,11 @@
 
 ```locate --all -c passwd``` viewing total number of search results using the '-c' argument or ```locate -i -c /etc/passwd``` to get count results for directories.
 
+> __easy way to find occurrences of files__
+
+```find /etc/ -print | grep hosts``` find "hosts" from the ```/etc``` directory or ```find /etc/ -print | grep python```
+
+
 ```sudo find / -type f -name "proxychains.conf"``` ```'/'``` denotes the root dir, ```-type f``` denotes type of file; either ```type d``` for directory or ```type f``` for file, ```-name``` is to specify file name.
 
 ```sudo find / -type d -name "dking"``` to find the ```d``` directory name "dking". or ```sudo find / -type d -iname "dking"``` to denote for non case sensitive results.
