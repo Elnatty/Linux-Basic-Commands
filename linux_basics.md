@@ -251,3 +251,28 @@ Tor uses port 9050 on your localhost to run.
 
 ```sudo systemctl enable ssh.service``` enables specified (ssh) service to be loaded automatically on boot.
 
+```service tor status``` another way to start services, although ```systemctl``` is better.
+
+
+#
+## SSH and SSH Security (using openssh).
+> the openssh service is a client-server service.
+
+> ```sudo apt-get install openssh-client``` to install client on your client linux machine.
+
+> ```sudo apt-get install openssh-server``` install openssh server client.
+
+> ```cat /etc/ssh/sshd_config``` this is the file that contains the client configs.
+
+> ```ssh-keygen -t rsa``` creating a rsa public-private key-pair for securing your ssh server/session.
+
+> ```ssh-copy-id dking@192.168.0.145``` after generating the keys, you have to copy the id by specifying your ssh-client inorder to add the public key to your ssh-client. Then after that, disable password authentication on your ssh-server for ssh login, so you don't have to use password authentication anymore.
+
+> ```sudo nano /etc/ssh/sshd_config``` scroll to the ```#PasswordAuthentication yes``` and change to ```no```
+
+> make sure you copy your private key to a secured folder and remove rwx permissions for groups and others.
+
+> ```scp test.txt dking@192.168.0.145:/home/dking/``` copying files in ssh environment.
+
+#
+## 
