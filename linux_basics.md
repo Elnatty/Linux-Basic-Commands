@@ -191,3 +191,49 @@ nathan  ALL=(ALL) /usr/bin/apt-get
 ```netstat -p``` displays all running processes and their ids.
 
 ```sudo netdiscover -i enp2s0``` an active/passive recon tool, for scanning the network (using arp)
+
+```sudo nano /etc/resolv.conf``` view and modify dns information.
+
+```systemd-resolve --status``` view the dns info for all interfaces.
+
+```sudo nano /etc/hosts``` you can block ads using the hosts file, by adding an entry under the ```127.0.1.1 dking``` example; ```0.0.0.0 google.com```, then restart network-manager ```sudo systecmtl restart network-manager.service```  now google.com cant be accessed again (you get redirected to the local host webpage).
+
+#
+## Tor and Proxychains.
+using Tor to anonymize your traffic.
+Tor uses port 9050 on your localhost to run.
+
+```sudo apt-get install tor``` firstly install the tor service.
+
+```sudo systemctl start tor``` start the tor service.
+
+```sudo systemctl status tor``` check the status.
+
+```sudo apt-get install proxychains``` secondly install proxychains.
+
+
+```sudo nano /etc/proxychain.conf``` file to view and edit configs for proxychain.
+
+> you can select between ```#dynamic_chain```, ```#strict_chain``` or ```#random_chain``` its all up to you.
+
+> normally ```#random_chain``` is preferable for tor. To use this, uncomment it from the list ie; ```random_chain```.
+
+> ```# Proxy DNS requests``` this ensures no memory/dns leaks. Make sure to uncomment it ie; ```Proxy DNS requests```.
+
+> ```# ProxyList format``` gives you examples how to use other proxies (eg; socks5) apart from tor.
+
+> Goto the [ProxyList] section, then add your proxies here. For tor, ```socks5  127.0.0.1  9050``` or your preffered proxies.
+
+> __Finally,__ use the proxychains cmd with preffered browser to start using tor service, ie; ```proxychains firefox dnsleaktest.com``` to check.. Note; speed might be s,ow
+
+### sites to check for dnsleaks:
++ https://whatleaks.site
++ https://dnsleaktest.com/results
++ https://whoer.net
+
+> recommended extensions to disable WebRTC: 
++ WebRTC Leak Prevent.
++ uBlock Origin.
+
+#
+## Service and Process Management.
