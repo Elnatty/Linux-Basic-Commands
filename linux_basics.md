@@ -128,3 +128,46 @@
 ```tar -czf test.tar.gz Test/``` compress using the tar.gz format.
 
 ```tar -xzf test.tar.gz``` decompress using the tar.gz format.
+
+#
+## Users and Groups Management/
+```getent passwd``` lists all users in the system.
+
+```getent group``` lists all groups in the system.
+
+```passwd``` changing password for currently logged in user.
+
+```sudo passwd dking``` changing password for the user dking.
+
+```su dking``` switch to the user account.
+
+```sudo useradd nathan``` add a new user nathan.
+
+```sudo userdel -r nathan``` delete the user, specify ```-r``` to remove the user home directory.
+
+```sudo useradd -m -c "new staff acct Nathan" -s /bin/bash nathan``` correct way to add a new user in linux.
+```-m``` adds a directory in the /home directory for the user, ```-c``` is for comments on the user acct, ```-s``` is for specifying a custom shell for the new user. This account is without a password tho.
+
+```sudo passwd nathan``` create a password for the new user acct. But this acct don't have sudo permissions.
+
+```su nathan``` switch into the new user acct.
+
+__visudo:__ this is where you manage permissions for users and groups.
+```linux
+sudo visudo
+```
+Under the ```# User privilege specification```, you can add a line defining permissions for a user, for example, this will allow the ```nathan``` user to be able to use the ```sudo apt-get``` cmds only.
+```linux
+nathan  ALL=(ALL) /usr/bin/apt-get
+```
+
+
+```pkexec visudo``` fix your corrupt visudo file.
+
+```sudo groupadd marketing``` create a new group called marketing.
+
+```cat /etc/groups``` views all the groups in the system.
+
+```sudo usermod -aG marketers nathan``` adds a user into the new group.
+
+```
