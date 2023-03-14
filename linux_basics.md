@@ -237,3 +237,17 @@ Tor uses port 9050 on your localhost to run.
 
 #
 ## Service and Process Management.
+```top``` view all users and their running processes.
+
+```free``` view ram usage infomation.
+
+```ps aux``` view a snapshot of running processes.
+
+```systemctl``` shows all running services.
+
+```sudo systemctl start tor.service``` starts the tor service.
+
+```sudo system status tor``` checks status of tor service.
+
+```sudo systemctl enable ssh.service``` enables specified (ssh) service to be loaded automatically on boot.
+
