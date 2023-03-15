@@ -275,4 +275,17 @@ Tor uses port 9050 on your localhost to run.
 > ```scp test.txt dking@192.168.0.145:/home/dking/``` copying files in ssh environment.
 
 #
-## 
+## curl
+Curl is a utility that allows you to transfer data to from a network server using one of the supportes protocols, http, https, ftp, ftps, sftp, tftp, telnet etc.
+
+```curl --help``` or ```man curl``` help manual.
+
+```curl -o /home/dking/Desktop/hsploit.html https://hsploit.com ``` output the content of the site to a directory ```-o``` and specifying the protocol and site.
+
+```curl -o kaliLinux.iso https://link-to-download-kali.iso``` download contents from the internet with curl using a customized name.
+
+```curl -O https://link-to-download-kali.iso``` specifying ```-O``` downloads the file with its original name ditectly.
+
+```curl -I https://techfashy.com``` specifying the ```-I``` returns the response header sent back the webserver.
+
+```curl -v https://hackersploit.org/``` you can also view the request headers, tls/ssl handshake of a site.
