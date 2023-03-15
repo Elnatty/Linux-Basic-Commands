@@ -289,3 +289,53 @@ Curl is a utility that allows you to transfer data to from a network server usin
 ```curl -I https://techfashy.com``` specifying the ```-I``` returns the response header sent back the webserver.
 
 ```curl -v https://hackersploit.org/``` you can also view the request headers, tls/ssl handshake of a site.
+
+
+#
+## UFW (uncomplicated firewall).
+```sudo nano /etc/default/ufw``` default ufw config file.
+
+```sudo ufw status verbose``` checking ufw full status.
+
+```sudo ufw status numbered``` numbers and views all rules, making deleting a rul very easy, for eg; ```sudo ufw delete 1``` deletes rule number 1.
+
+```sudo ufw enable``` enable ufw.
+
+```sudo ufw disable``` disable ufw.
+
+```sudo ufw reset``` reset settings to default config.
+
+```sudo ufw default allow incoming``` to allow incoming connections for systems.
+
+```sudo ufw allow ssh``` or ```sudo ufw allow 22``` for allowing incoming ssh connections.
+
+```sudo ufw allow http``` or ```sudo ufw deny 80 to allow and deny incoming http services.
+
+```sudo ufw allow proto tcp from any to any port 80,443``` self explanatory.
+
+```ufw deny 21/ftp``` deny ftp service.
+
+```ufw deny 3306``` deny sql service.
+
+```sudo ufw deny proto tcp from any to any port 3306``` deny all connections to the sql db.
+
+```ufw allow 192.168.0.1``` allow incoming connection from your gateway(isp) to get internet access.
+
+```sudo ufw allow from 192.168.0.140 to any port 22``` this allows the ip to access the ssh service.
+
+```sudo ufw allow  from 192.168.0.0/24``` allow for a particular subnet.
+
+### Tips to securing ubuntu server with UFW
+1. ```sudo ufw reset``` Its better to reset all existing rules and start adding rules manually by yourself. In case you are connected via ssh to the server, make sure the ufw servise is disabled 1st, so as not to get thrown out of your ssh connection ie; ```sudo ufw disable``` before running the ```sudo ufw reset``` cmd.
+
+2. Default policies for incoming connections should be denied, and allowed for outgoing connections. ```sudo ufw default deny incoming``` and ```sudo ufw default allow outgoing```
+
+3. In this case we want to keep port 80, 443 and 22 open. ```sudo ufw allow ssh```, ```sudo ufw allow http```, ```sudo ufw allow https```. And also allow connection from a particular ip address ```sudo ufw allow from 10.0.0.1```.
+
+4. ```sudo ufw allow from 10.0.0.10 to any port 22``` this blocks ssh connections from all ips except ```10.0.0.10``` or for subnets ```10.0.0.1/24```.
+
+5. We are done. You can start/enable ufw service now. 
+```sudo systemctl start ufw```, then  ```sudo ufw enable```.
+
+6. ```sudo ufw status verbose``` to check if all is right.
+
