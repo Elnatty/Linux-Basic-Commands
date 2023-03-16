@@ -256,6 +256,12 @@ Tor uses port 9050 on your localhost to run.
 
 #
 ## SSH and SSH Security (using openssh).
+```ssh -i sshkey.private bandit14@localhost``` logging in to a ssh session by specifying a private key with ```-i```. Set permission for the key file, its usually ```400```.
+
+```ssh -t username@ipaddress /bin/sh``` the ```t``` helps changes the default ```/bin/bash``` to ```sh``` in event where it logs you out while signing in to your account.
+
+```ncat --ssl localhost 31000``` login using ssl with ncat.
+
 > the openssh service is a client-server service.
 
 > ```sudo apt-get install openssh-client``` to install client on your client linux machine.
@@ -339,3 +345,27 @@ Curl is a utility that allows you to transfer data to from a network server usin
 
 6. ```sudo ufw status verbose``` to check if all is right.
 
+7. ```sudo ufw reset``` reset your rules if you made some mistakes.
+
+#
+## Clear your Tracks (Logs) on Linux
+This involves wiping all the activity of an attacker so as to avoid any form of detection by incidence response teams or forensic teams such as: clear logs, modify/clear any created registries and remove any files or accts they used.
+
+### on Linux;
+The log files are located in the ```cd var/log```
+
+> __shred__ allows you to delete data/files permanently and do so without possibility of recovery.
+
+```sudo shred -vfzu auth.log``` use the ```man shred``` to view the ```-vfzu``` arguments. Auth log contains authentication activities, kernel.log file and other files you used that generated a log file.
+
+### Bash History.
+```sudo nano /home/username/.bash_history``` displays history of all used cmds. Instead of clearing/shredding the file, you can use the null redirect to clear the file ```>.bash_history```.
+
+
+#
+## OTW Strings Manipulation.
+```file data.txt``` displays file type.
+
+```strings data.txt | grep "="``` this cmd iterates through the data in the data.txt file and searches for the "=".
+
+```strings data.txt | base64 -d``` decoding and encoded base64 text in a data.txt file.
