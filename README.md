@@ -1,6 +1,5 @@
 # Linux Cheat Sheet:
-Linux Commands (Case Sensitive):
-
+```
 Basic:
 pwd                ==> print the name of current directory   || Ex: pwd
 whoami             ==> print the current user                || Ex: whoami
@@ -15,7 +14,7 @@ echo [param]       ==> outputs the value of the variable	 || Ex: echo "Hi"
 					   or string to stdout		             
 tree 			   ==> lists the files in the current		 || Ex: tree 
 					   directory in tree like format 
-
+```
 For sorting files:
 mv [file] [newname]==> rename a file or folder  			 || Ex: mv exe txt
 cat [filename]     ==> reads the specified file              || Ex: cat cmds.txt
