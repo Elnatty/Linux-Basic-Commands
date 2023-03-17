@@ -28,3 +28,36 @@ expr 30 \* 4  # we escape the multiplication symbol in bash.
 200
 120
 ```
+
+#
+### if statements.
+```bash
+#!/bin/bash
+
+name=2004  
+
+if [ $name -eq 200 ];
+then
+        echo "condition is true."
+else
+        echo "condition is false"
+fi
+```
+We are going to check if a file/application exist, if not, then it installs it automatically.
+> you can check for the existence of a file ie, ```which htop``` outputs ```/usr/bin/htop``` meaning its available in the system.
+
+```bash
+#!/bin/bash
+
+name=/usr/bin/htop              
+
+if [ -f $name ];
+then
+        echo "htop exists.. launching it now ! !"
+else
+        echo "not found, installing it now ! !"
+        sudo apt update && sudo apt intall -y htop
+fi
+
+$name
+```
