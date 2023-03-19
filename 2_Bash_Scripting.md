@@ -1,5 +1,20 @@
 # Bash Scripting 
 
+## output data on the screen.
+1. using printf
+```bash
+name="DKing"
+printf "My name is %s\n" $name
+
+#outputs: My name is Nathan
+```
+2. using echo
+```bash
+name="Dking"
+echo "My name is $name"
+
+#outputs: My name is Nathan
+```
 
 
 ### variables
@@ -188,17 +203,126 @@ htop is located at: /usr/bin/htop
 #
 ### while loops
 we will be counting from 1-10 here.
-
 ```bash
 #!/bin/bash
 
 num=1 
 
-while [ $num -le 10 ]
+while [ $num -le 5 ]
 do
         echo $num
         num=$(($num + 1))
         sleep 0.5
 done
 
+#outputs:
+:'
+1
+2
+3
+4
+5
+'
 ```
+#
+### Universal update script
+```bash
+#!/bin/bash
+
+release_file=/etc/os-release
+
+# the -q ensures quiet mode.
+if grep -q "debian" $release_file
+then
+        # this check if the linux system is debian dist  
+        sudo apt update && sudo apt upgrade && sudo apt dist-upgrade -y
+else
+        # this checks if the host is Arch based system
+        sudo paacman -Syu
+fi
+```
+
+```bash
+#!/bin/bash
+
+release_file=/etc/os-release
+
+if grep -q "Debian" $release_file || grep -q "Ubuntu" $release_file
+then
+        # this checks for "Debian" or "Ubuntu" based systems
+        sudo apt update && sudo apt upgrade && sudo apt dist-upgrade -y
+else
+        # this checks if the host is Arch based system
+        sudo paacman -Syu
+fi
+```
+
+#
+### for loops
+```bash
+#!/bin/bash
+
+for i in {1..10}
+do
+        echo $i
+        sleep 0.5
+done
+
+# outputs 1...to....10
+```
+
+```bash
+#!/bin/bash
+
+# going through all files with the .log extension in the log files folder
+for i in ~logfiles/*.log
+do
+        # then converting them to a .tar.gz file.
+        tar -czvf $i.tar.gz $i
+done
+```
+using for loop to iterate contents of a .txt file
+```bash
+#!/bin/bash
+
+f=aa.txt
+
+for i in `cat $f`
+do
+        echo $i
+        sleep 1
+done
+
+#outputs
+:'
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+Sunday
+'
+```
+
+#
+### Where to store scripts in the linux system.
+location: /usr/local/bin/
+
+moving it to the directory. `sudo mv simple.sh /usr/local/bin/update`
+
+you might want to change ownership for the script, so that for anyone to run the script they need sudo password.
+```bash
+sudo chown root:root /usr/local/bin/update
+
+# outputs
+we can now type `update` from any location now, and this executes the script.
+```
+### Adding variables to local path:
+`export PATH=/usr/local/bin:$PATH` this adds the `/usr/local/bin` to env local path.
+
+#
+### Data Streams;
+1. __Standary Output:__ output that is printed to the screen that does not constitute an error. eg; 
+
+2. Standard Errorr: 
