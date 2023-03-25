@@ -99,6 +99,10 @@ ss(Socket Status) ==> used to dump socket statistics and	 || Ex: ss
 ```
 # linux Cmds
 
+```dpkg --list``` - list all installed apps on your system.
+
+```sudo apt purge --auto-remove appname && sudo apt clean``` - cmd to totally/completely remove any app
+
 ```ctl + alt + t``` open terminal.
 
 ```ctl + shift + w``` close terminal.
