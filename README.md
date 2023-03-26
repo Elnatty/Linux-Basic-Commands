@@ -98,7 +98,7 @@ ss(Socket Status) ==> used to dump socket statistics and	 || Ex: ss
 					  displays information 
 ```
 # linux Cmds
-
+```systemctl list-unit-files``` - list/find any services for example; ```systemctl list-unit-files | grep network``` to find the network-manager service.
 ```dpkg --list``` - list all installed apps on your system.
 
 ```sudo apt purge --auto-remove appname && sudo apt clean``` - cmd to totally/completely remove any app
