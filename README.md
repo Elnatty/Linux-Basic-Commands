@@ -103,6 +103,8 @@ ss(Socket Status) ==> used to dump socket statistics and	 || Ex: ss
 
 ```sudo apt purge --auto-remove appname && sudo apt clean``` - cmd to totally/completely remove any app
 
+```dpkg -i appname.deb``` - install debian package files (.deb).
+
 ```ctl + alt + t``` open terminal.
 
 ```ctl + shift + w``` close terminal.
