@@ -303,7 +303,18 @@ do
         tar -czvf $i.tar.gz $i
 done
 ```
+
 using for loop to iterate contents of a .txt file
+```bash
+
+x=$(cat /etc/passwd)
+
+IFS=$'\n'
+for i in $x; do
+        echo $i
+done
+```
+
 ```bash
 #!/bin/bash
 
