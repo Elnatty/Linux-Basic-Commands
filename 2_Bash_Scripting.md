@@ -96,7 +96,7 @@ else
         echo "condition is false"
 fi
 ```
-Using conditionals with Numbers
+Using conditionals with Strings.
 ```bash
 #!/bin/bash
 
