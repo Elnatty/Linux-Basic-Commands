@@ -83,6 +83,7 @@ echo $q    #outputs My name is Nathan Alabi with username dking, 1 + 1 = 2
 
 #
 ### if statements.
+Using conditionals with Numbers
 ```bash
 #!/bin/bash
 
@@ -95,6 +96,19 @@ else
         echo "condition is false"
 fi
 ```
+Using conditionals with Numbers
+```bash
+#!/bin/bash
+
+read -p "Enter a username: " username
+
+if [ $username = "DKin" ];then
+        echo "Welcome to the Lair $username";
+else
+        echo "error...";
+fi
+```
+
 We are going to check if a file/application exist, if not, then it installs it automatically.
 > you can check for the existence of a file ie, ```which htop``` outputs ```/usr/bin/htop``` meaning its available in the system.
 
