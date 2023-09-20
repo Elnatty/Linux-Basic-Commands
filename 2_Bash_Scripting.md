@@ -79,8 +79,6 @@ q="$p, 1 + 1 = $((1 + 1))"
 echo $q    #outputs My name is Nathan Alabi with username dking, 1 + 1 = 2
 
 ```
-
-
 #
 ### if statements.
 Using conditionals with Numbers
@@ -283,6 +281,16 @@ do
 done
 
 # outputs 1...to....10
+```
+```bash
+Traversing the content of a file using for loop.
+
+x=$(cat /etc/passwd)
+
+IFS=$'\n'
+for i in $x; do
+        echo $i
+done
 ```
 
 ```bash
